@@ -1,4 +1,7 @@
+// Función ready() que se ejecuta una vez que han cargado
+// todos los elementos del DOM
 $(document).ready(function(){
+    // Método ajax() para solicitar datos a la API
     $.ajax({
         type:'GET',
         url:'https://www.feriadosapp.com/api/holidays.json',
@@ -9,7 +12,7 @@ $(document).ready(function(){
             // Generación de la tabla a partir de los datos
                 let tabla1 ="<tr><th>Id</th><th>Fecha</th><th>Título</th><th>Extra</th><th>Ley</th><th>Ley Id</th></tr>";
 
-            // Ciclo For para generar cada fila de la tabla
+            // Ciclo ForEach para generar cada fila de la tabla
                 datosApi.data.forEach(element =>{
                     tabla1 += 
                     `<tr>
